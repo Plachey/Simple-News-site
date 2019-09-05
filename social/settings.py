@@ -56,15 +56,15 @@ COMMENTS_APP = 'django_comments_xtd'
 COMMENTS_XTD_SALT = (b"Timendi causa est nescire. "
                      b"Aequam memento rebus in arduis servare mentem.")
 # Source mail address used for notifications.
-COMMENTS_XTD_FROM_EMAIL = "plachey1@gmail.com"
+COMMENTS_XTD_FROM_EMAIL = "example@gmail.com"
 # Contact mail address to show in messages.
-COMMENTS_XTD_CONTACT_EMAIL = "plachey1@gmail.com"
+COMMENTS_XTD_CONTACT_EMAIL = "example@gmail.com"
 
 COMMENTS_XTD_MAX_THREAD_LEVEL = 5  # default is 0
 COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')  # default is ('thread_id', 'order')
 
 MANAGERS = (
-    ('Vlad', 'plachey1@gmail.com'),
+    ('Admin', 'example@gmail.com'),
 )
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -191,11 +191,11 @@ ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 3
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 
 'mail to post'
-SEND_GRID_API_KEY = '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'
+SEND_GRID_API_KEY = ''
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'plachey'
-EMAIL_HOST_PASSWORD = 'plachey93'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'plachey1@gmail.com'
+DEFAULT_FROM_EMAIL = 'example@gmail.com'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact email received from website'
