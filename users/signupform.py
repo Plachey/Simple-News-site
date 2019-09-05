@@ -12,7 +12,7 @@ class SignUpForm(frm.Form):
         model = CustomUser
         fields = ('email', 'first_name', 'last_name', 'age',)
 
-    def signup(self, user):
+    def signup(self, request, user):
         user.email = self.cleaned_data['email']
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
