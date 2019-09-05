@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load comments %}
+{% load comments_xtd %}
+
+{% block content %}
+    <div class="post-entry">
+        <h2>{{ post.title|safe }}</h2>
+        <p>{{ post.body|safe }}</p>
+        <p>{{ post.publication_date }}</p>
+        <p>{{ post.author }}</p>
+    </div>
+    <hr>
+
+{% get_comment_count for object as comment_count %}
+<div class="py-4 text-center">
+  <a href="{% url 'home' %}">Back to the post list</a>
+  &nbsp;&sdot;&nbsp;
+  {{ comment_count }} comment{{ comment_count|pluralize }}
+  ha{{ comment_count|pluralize:"s,ve"}} been posted.
+</div>
+
+<div class="comment">
+  <h4 class="text-center">Your comment</h4>
+  <div class="well">
+    {% render_comment_form for object %}
+  </div>
+</div>
+
+{% if comment_count %}
+<ul class="media-list">
+  {% render_xtdcomment_tree for object %}
+</ul>
+{% endif %}
+
+{% endblock content %}
