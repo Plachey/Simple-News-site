@@ -31,6 +31,6 @@ class SocCreateView(View):
                 new_post.author = request.user
                 if request.user.groups.filter(name='my_editors').exists() or request.user.groups.filter(name='my_admin').exists():
                     new_post.moderation = True
-                    new_post.save()
+                new_post.save()
                 return redirect(new_post)
             return render(request, 'post_new.html', {'form': form})
